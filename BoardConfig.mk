@@ -15,13 +15,12 @@
 #
 
 TARGET_OTA_ASSERT_DEVICE := m3s,mt6750
-
+TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := mt6750
 
 # Arch
 # For 64 bit
 TARGET_ARCH := arm64
-TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := mt6750
 TARGET_CPU_ABI := arm64-v8a
 TARGET_ARCH_VARIANT := armv8-a
@@ -74,10 +73,10 @@ TW_FLASH_FROM_STORAGE := true
 TW_SDEXT_NO_EXT4 := true
 RECOVERY_SDCARD_ON_DATA := true
 # Crypto
-# TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p22"
-# TW_CRYPTO_MNT_POINT := "/data"
-# TW_CRYPTO_KEY_LOC := "footer"
-# TW_INCLUDE_L_CRYPTO := true
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p30"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_KEY_LOC := "footer"
+TW_INCLUDE_L_CRYPTO := true
 # No partitioning SD Card
 BOARD_HAS_NO_REAL_SDCARD := true
 
@@ -93,7 +92,7 @@ BOARD_HAS_FLIPPED_SCREEN := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 TW_MTP_DEVICE := /dev/mtp_usb
 
-BOARD_CUSTOM_BOOTIMG_MK := device/meizu/m3s/custombootimg.mk
+# BOARD_CUSTOM_BOOTIMG_MK := device/meizu/m3s/custombootimg.mk
 
 # Buttons:
 # No Download mode
