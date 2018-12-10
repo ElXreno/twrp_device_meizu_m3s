@@ -4,7 +4,6 @@ build:
  - apt-get -yy update && apt-get -y install aria2
  - cd $HOME/
  - aria2c -x16 -s16 -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-5.1.1-cleaned/omni_twrp-5.1.1_cleaned.tar.xz -o twrp.tar.xz
- - mkdir twrp
  - tar -xJf twrp.tar.xz --directory twrp/ && rm twrp.tar.xz
  - cd twrp/ && mkdir -p device/meizu/m3s && mv /builds/ElXreno/twrp_device_meizu_m3s/* device/meizu/m3s/
  - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder
