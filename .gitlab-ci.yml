@@ -1,11 +1,10 @@
 image: surendrajat/twrp-builder:latest
 build:
  script:
- - apt-get -yy update && apt-get -y install aria2
- - cd $HOME/
- - aria2c -x16 -s16 -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-5.1.1-cleaned/omni_twrp-5.1.1_cleaned.tar.xz -o twrp.tar.xz
- - tar -xJf twrp.tar.xz --directory twrp/ && rm twrp.tar.xz
- - cd twrp/ && mkdir -p device/meizu/m3s && mv /builds/ElXreno/twrp_device_meizu_m3s/* device/meizu/m3s/
- - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder
- - git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery --depth=1
+ - mkdir $HOME/omni && cd $HOME/omni
+ - repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-6.0
+ - repo sync -j 16
+ - rm -rf bootable/recovery
+ - git clone https://github.com/omnirom/android_bootable_recovery.git -b android-5.1 bootable/recovery
+ - mkdir -p device/meizu/m3s && mv /builds/ElXreno/twrp_device_meizu_m3s/* device/meizu/m3s/
  - source build/envsetup.sh && lunch omni_m3s-eng && make -j16 recoveryimage
