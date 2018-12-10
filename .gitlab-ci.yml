@@ -1,4 +1,4 @@
-image: docker pull elxreno/twrp-build:latest
+image: elxreno/twrp-build:latest
 build:
  script:
  - cd /root && mkdir omni && cd omni
