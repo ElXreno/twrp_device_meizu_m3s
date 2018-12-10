@@ -1,7 +1,9 @@
 image: surendrajat/twrp-builder:latest
 build:
  script:
- - mkdir $HOME/omni && cd $HOME/omni
+ - cd $HOME
+ - apt -yy update && apt -y install git axel && git clone https://github.com/akhilnarang/scripts && cd scripts && sudo bash setup/android_build_env.sh && sudo bash setup/install_android_sdk.bash
+ - cd $HOME && mkdir omni && cd omni
  - repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-6.0
  - repo sync -j 16
  - rm -rf bootable/recovery
