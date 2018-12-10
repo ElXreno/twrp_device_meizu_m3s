@@ -15,4 +15,4 @@ build recoveryimage:
     - git clone https://github.com/omnirom/android_bootable_recovery.git -b android-6.0 bootable/recovery
     - mkdir -p device/meizu/m3s && mv /builds/ElXreno/twrp_device_meizu_m3s/* device/meizu/m3s/
     - source build/envsetup.sh && lunch omni_m3s-eng && make -j5 recoveryimage
-    - ln -s /root/out/target/product/m3s/recovery.img $CI_PROJECT_DIR/recovery.img
+    - cp /root/out/target/product/m3s/recovery.img $CI_PROJECT_DIR/recovery.img
