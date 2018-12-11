@@ -3,7 +3,7 @@ stages:
     
 build recoveryimage:
     stage: build
-    image: elxreno/twrp-build:latest
+    image: elxreno/twrp-build:testing
     artifacts:
         paths:
             - recovery.img
