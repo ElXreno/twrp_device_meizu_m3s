@@ -52,7 +52,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # App
 TW_EXCLUDE_TWRPAPP := true
-TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_SUPERSU := false
 
 # Recovery
 TW_SCREEN_BLANK_ON_BOOT := true
@@ -61,7 +61,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true
 TW_DEVICE_VERSION := by ElXreno (Mr_Bagger)
-# TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery
+TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery
 TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
