@@ -13,4 +13,4 @@ build recoveryimage:
     - cd omni
     - mkdir -p device/meizu/m3s && mv /builds/ElXreno/twrp_device_meizu_m3s/* device/meizu/m3s/
     - source build/envsetup.sh && lunch omni_m3s-eng && make -j5 recoveryimage
-    - cp /root/out/target/product/m3s/recovery.img $CI_PROJECT_DIR/recovery.img
+    - cp /root/omni/out/target/product/m3s/recovery.img $CI_PROJECT_DIR/recovery.img
