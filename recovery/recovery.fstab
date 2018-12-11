@@ -23,7 +23,6 @@
 /md3img                 emmc            /dev/block/platform/mtk-msdc.0/by-name/md3img       
 /preloader              emmc            /dev/block/mmcblk0boot0                             
 /preloader_2            emmc            /dev/block/mmcblk0boot1                             
-/ram0                   vfat            /dev/block/ram0                                     
 
 # Removable storage
 /external_sd            vfat            /dev/block/mmcblk1p1                                        flags=display="Micro SDcard";backup=0;wipeingui;storage;removable;settingsstorage
