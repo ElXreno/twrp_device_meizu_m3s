@@ -3,14 +3,16 @@ stages:
     
 build recoveryimage:
     stage: build
-    image: elxreno/twrp-build:testing
+    image: elxreno/twrp-build:latest
     artifacts:
         paths:
             - recovery.img
     script:
-    - cd /root
-    - git clone https://gitlab.com/ElXreno/android-5.1-src omni
-    - cd omni
+    - cd /root && mkdir omni && cd omni
+    - repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-6.0
+    - repo sync -j16
+    - rm -rf bootable/recovery
+    - git clone https://github.com/omnirom/android_bootable_recovery.git -b android-6.0 bootable/recovery
     - mkdir -p device/meizu/m3s && mv /builds/ElXreno/twrp_device_meizu_m3s/* device/meizu/m3s/
     - source build/envsetup.sh && lunch omni_m3s-eng && make -j5 recoveryimage
     - cp /root/out/target/product/m3s/recovery.img $CI_PROJECT_DIR/recovery.img
