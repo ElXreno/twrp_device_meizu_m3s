@@ -10,10 +10,6 @@ addons:
   artifacts: true
   apt:
     update: true
-    
-cache:
-  directories:
-    - /home/travis/omni
 
 before_install:
   - sudo apt-get update
