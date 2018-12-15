@@ -10,6 +10,10 @@ addons:
   artifacts: true
   apt:
     update: true
+    
+cache:
+  directories:
+    - /home/travis/omni
 
 before_install:
 #  - sudo apt-get update
@@ -17,20 +21,23 @@ before_install:
   - sudo apt-get install -y --no-install-recommends git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip maven schedtool rsync make python lzop bc
 
 before_script:
-  - git clone https://gitlab.com/ElXreno/android-5.1-src $HOME/omni
-  - cd $HOME/omni
+  - git clone https://gitlab.com/ElXreno/android-5.1-src ~/omni
+  - cd ~/omni
+  - rm -rf device/meizu
   - mkdir -p device/meizu
-  - mv /home/travis/build/ElXreno/twrp_device_meizu_m3s device/meizu/m3s
+  - mv ~/build/ElXreno/twrp_device_meizu_m3s device/meizu/m3s
 
 script:
   - source build/envsetup.sh
   - lunch omni_m3s-eng
   - make -j8
+  - cp out/target/product/m3s/recovery.img ~/
+  - make clean
   
 deploy:
   provider: releases
   api_key: ${DEPLOY_API_KEY}
-  file: "$HOME/omni/out/target/product/m3s/recovery.img"
+  file: "/home/travis/recovery.img"
   skip_cleanup: true
   on:
     tags: true
