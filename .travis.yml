@@ -6,6 +6,7 @@ branches:
   - android-5.1
 
 addons:
+  artifacts: true
   apt:
     update: true
 
@@ -17,5 +18,17 @@ before_script:
   - git clone https://gitlab.com/ElXreno/android-5.1-src $HOME/omni
 
 script:
-  - pwd
-  - ls -alh .
+  - cd $HOME/omni
+  - mkdir -p device/meizu
+  - mv /home/travis/build/ElXreno/twrp_device_meizu_m3s device/meizu/m3s
+  - source build/envsetup.sh
+  - lunch omni_m3s-eng
+  - make -j8
+  
+deploy:
+  provider: releases
+  api_key: ${DEPLOY_API_KEY}
+  file: $HOME/omni/out/target/product/m3s/recovery.img
+  skip_cleanup: true
+  on:
+    tags: true
