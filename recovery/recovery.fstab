@@ -28,6 +28,7 @@
 /misc                   emmc            /dev/block/platform/mtk-msdc.0/by-name/para                 flags=backup=1;flashimg=1
 /proinfo                emmc            /dev/block/platform/mtk-msdc.0/by-name/proinfo              flags=backup=1;flashimg=1
 /custom                 ext4            /dev/block/platform/mtk-msdc.0/by-name/custom               flags=backup=1;flashimg=1
+/secro                  ext4            /dev/block/platform/mtk-msdc.0/by-name/secro                flags=backup=1;flashimg=1
 
 /expdb_image            emmc            /dev/block/mmcblk0p4
 /frp_image              emmc            /dev/block/mmcblk0p5
