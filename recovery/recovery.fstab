@@ -26,15 +26,13 @@
 /proinfo                emmc            /dev/block/platform/mtk-msdc.0/by-name/proinfo              flags=backup=1;flashimg=1
 /custom                 ext4            /dev/block/platform/mtk-msdc.0/by-name/custom               flags=backup=1;flashimg=1
 /secro                  emmc            /dev/block/platform/mtk-msdc.0/by-name/secro                flags=backup=1;flashimg=1
-
-/expdb_image            emmc            /dev/block/mmcblk0p4
-/ppl_image              emmc            /dev/block/mmcblk0p6
-/rstinfo_image          emmc            /dev/block/mmcblk0p8
-/seccfg_image           emmc            /dev/block/mmcblk0p12
-/oemkeystore_image      emmc            /dev/block/mmcblk0p13
-/secro_image            emmc            /dev/block/mmcblk0p26
-/keystore_image         emmc            /dev/block/mmcblk0p27
-/flashinfo_image        emmc            /dev/block/mmcblk0p31
+/expdb                  emmc            /dev/block/platform/mtk-msdc.0/by-name/expdb                flags=backup=1;flashimg=1
+/ppl                    emmc            /dev/block/platform/mtk-msdc.0/by-name/ppl                  flags=backup=1;flashimg=1
+/rstinfo                emmc            /dev/block/platform/mtk-msdc.0/by-name/rstinfo              flags=backup=1;flashimg=1
+/seccfg                 emmc            /dev/block/platform/mtk-msdc.0/by-name/seccfg               flags=backup=1;flashimg=1
+/oemkeystore            emmc            /dev/block/platform/mtk-msdc.0/by-name/oemkeystore          flags=backup=1;flashimg=1
+/keystore               emmc            /dev/block/platform/mtk-msdc.0/by-name/keystore             flags=backup=1;flashimg=1
+/flashinfo              emmc            /dev/block/platform/mtk-msdc.0/by-name/flashinfo            flags=backup=1;flashimg=1
 
 # Removable storage
 /external_sd            vfat            /dev/block/mmcblk1p1                                        flags=display="Micro SDcard";backup=0;wipeingui;storage;removable
