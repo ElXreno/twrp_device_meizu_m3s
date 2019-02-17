@@ -16,6 +16,7 @@
 /lk                     emmc            /dev/block/platform/mtk-msdc.0/by-name/lk                   flags=backup=1;flashimg=1
 /lk2                    emmc            /dev/block/platform/mtk-msdc.0/by-name/lk2                  flags=backup=1;flashimg=1
 /logo                   emmc            /dev/block/platform/mtk-msdc.0/by-name/logo                 flags=backup=1;flashimg=1;display="Logo"
+/frp                    emmc            /dev/block/platform/mtk-msdc.0/by-name/frp                  flags=backup=1;flashimg=1
 /tee1                   emmc            /dev/block/platform/mtk-msdc.0/by-name/tee1                 flags=backup=1;flashimg=1
 /tee2                   emmc            /dev/block/platform/mtk-msdc.0/by-name/tee2                 flags=backup=1;flashimg=1
 /nvram                  emmc            /dev/block/platform/mtk-msdc.0/by-name/nvram                flags=backup=1;flashimg=1;display="NVRam"
@@ -27,7 +28,6 @@
 /secro                  emmc            /dev/block/platform/mtk-msdc.0/by-name/secro                flags=backup=1;flashimg=1
 
 /expdb_image            emmc            /dev/block/mmcblk0p4
-/frp_image              emmc            /dev/block/mmcblk0p5
 /ppl_image              emmc            /dev/block/mmcblk0p6
 /rstinfo_image          emmc            /dev/block/mmcblk0p8
 /seccfg_image           emmc            /dev/block/mmcblk0p12
