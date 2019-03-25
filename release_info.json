@@ -1,0 +1,30 @@
+[
+    {
+        "version": "v0.1.2-alpha",
+        "stable": false,
+        "recommended": true,
+        "release_notes": [
+            "(Possible) fix mounting secro partition",
+            "Removed 'System Image' from partition list",
+            "Update other partitions"
+        ]
+    },
+    {
+        "version": "v0.1.1-alpha",
+        "stable": false,
+        "recommended": false,
+        "release_notes": [
+            "Removed boot and recovery from 'wipeingui'",
+            "Removed data partition from 'wipeduringfactoryreset'",
+            "Added Travis-CI autobuild"
+        ]
+    },
+    {
+        "version": "v0.1-alpha",
+        "stable": false,
+        "recommended": false,
+        "release_notes": [
+            "First testing build"
+        ]
+    }
+]
