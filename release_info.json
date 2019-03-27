@@ -1,8 +1,16 @@
 [
     {
-        "version": "v0.1.2-alpha",
+        "version": "v0.1.3-alpha",
         "stable": false,
         "recommended": true,
+        "release_notes": [
+            "Update partitions list"
+        ]
+    },
+    {
+        "version": "v0.1.2-alpha",
+        "stable": false,
+        "recommended": false,
         "release_notes": [
             "(Possible) fix mounting secro partition",
             "Removed 'System Image' from partition list",
