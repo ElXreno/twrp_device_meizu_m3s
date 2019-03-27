@@ -11,7 +11,7 @@ before_deploy:
   - export FILE_TO_UPLOAD="$(pwd)/recovery.img"
   - git config --local user.name "ElXreno"
   - git config --local user.email "elxreno@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)-debug}
   - git tag $TRAVIS_TAG
 
 deploy:
@@ -19,3 +19,4 @@ deploy:
   api_key: $OAUTH_KEY
   file: $FILE_TO_UPLOAD
   skip_cleanup: true
+  all_branches: true
