@@ -35,5 +35,5 @@
 /flashinfo              emmc            /dev/block/platform/mtk-msdc.0/by-name/flashinfo            flags=backup=1;flashimg=1
 
 # Removable storage
-/external_sd            vfat            /dev/block/mmcblk1p1                                        flags=display="Micro SDcard";backup=0;wipeingui;storage;removable
+/external_sd            vfat            /dev/block/mmcblk1p1                                        flags=display="Micro SDcard";backup=0;wipeingui;storage;removable;settingsstorage
 /usb-otg                vfat            /dev/block/sda1 /dev/block/sda                              flags=display="USB-OTG";backup=0;wipeingui;storage;removable
