@@ -9,8 +9,8 @@ script:
 
 before_deploy:
   - export FILE_TO_UPLOAD="$(pwd)/recovery.img"
-  - git config --local user.name "YOUR GIT USER NAME"
-  - git config --local user.email "YOUR GIT USER EMAIL"
+  - git config --local user.name "ElXreno"
+  - git config --local user.email "elxreno@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG
 
