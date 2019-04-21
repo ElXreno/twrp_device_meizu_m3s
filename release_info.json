@@ -1,8 +1,16 @@
 [
     {
-        "version": "v0.1.3-alpha",
+        "version": "v0.1.4-alpha",
         "stable": false,
         "recommended": true,
+        "release_notes": [
+            "Return 'System Image' to partition list"
+        ]
+    },
+    {
+        "version": "v0.1.3-alpha",
+        "stable": false,
+        "recommended": false,
         "release_notes": [
             "Update partitions list"
         ]
