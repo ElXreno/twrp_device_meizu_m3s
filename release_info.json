@@ -1,5 +1,16 @@
 [
     {
+        "version": "v0.1.6-alpha",
+        "stable": false,
+        "recommended": true,
+        "release_notes": [
+            "Fixes by Skyrimus side:
+            #1 CPU Temperature show fixed 
+#2 Changed TWRP default path to TWRP/BACKUPS/m3s/
+#3 Fixed some stupid flags in recovery.fstab"
+        ]
+    },
+    {
         "version": "v0.1.5-alpha",
         "stable": false,
         "recommended": true,

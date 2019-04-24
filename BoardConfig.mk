@@ -10,6 +10,9 @@ TARGET_USES_64_BIT_BINDER := true
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := mt6750
+BOARD_HAS_MTK_HARDWARE := true
+MTK_HARDWARE := true
+BOARD_USES_LEGACY_MTK_AV_BLOB := true
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -41,14 +44,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Partitions types
 TARGET_USERIMAGES_USE_EXT4 := true
-# TARGET_USERIMAGES_USE_F2FS := true
-
-# Encryption
-# TW_INCLUDE_CRYPTO := true
-# TW_CRYPTO_FS_TYPE := "f2fs"
-# TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/mtk-msdc.0/by-name/userdata"
-# TW_CRYPTO_MNT_POINT := "/data"
-# TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,inline_data,inline_xattr,data=ordered"
 
 # App
 TW_EXCLUDE_TWRPAPP := true
@@ -61,10 +56,11 @@ TW_THEME := portrait_hdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true
-TW_DEVICE_VERSION := by ElXreno (v0.1.5-alpha)
+TW_DEVICE_VERSION := by ElXreno (v0.1.6-alpha)
 TW_NO_BATT_PERCENT := true
-# TW_CUSTOM_BATTERY_PATH := /sys/devices/platform/battery/power_supply/battery/capacity # Doesn't work properly
 TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
