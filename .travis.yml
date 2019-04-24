@@ -1,5 +1,9 @@
 language: minimal
 
+branches:
+  only:
+    - android-5.1
+
 services:
   - docker
 
