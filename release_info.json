@@ -4,7 +4,9 @@
         "stable": false,
         "recommended": true,
         "release_notes": [
-            "CPU Temperature show fixed and changed TWRP default path to TWRP/BACKUPS/m3s/"
+            "#1 CPU Temperature show fixed 
+#2 Changed TWRP default path to TWRP/BACKUPS/m3s/
+#3 Fixed some stupid flags in recovery.fstab"
         ]
     },
     {
