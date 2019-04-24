@@ -1,5 +1,13 @@
 [
     {
+        "version": "v0.1.6-alpha",
+        "stable": false,
+        "recommended": true,
+        "release_notes": [
+            "CPU Temperature show fixed and changed TWRP default path to TWRP/BACKUPS/m3s/"
+        ]
+    },
+    {
         "version": "v0.1.5-alpha",
         "stable": false,
         "recommended": true,
