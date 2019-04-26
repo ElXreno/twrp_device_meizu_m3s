@@ -1,11 +1,11 @@
 [
     {
-        "version": "v0.1.6-alpha",
+        "version": "v0.1.7-alpha",
         "stable": false,
         "recommended": true,
         "release_notes": [
-            "Battery percentage fixed (not checked)",
-            "Fixes by Skyrimus side: \n#1 CPU Temperature show fixed \n#2 Changed TWRP default path to TWRP/BACKUPS/m3s/ \n#3 Fixed some stupid flags in recovery.fstab"
+            "SDCard can be mount with another filesystem (non-vfat)",
+            "Updated partitions name"
         ]
     },
     {
