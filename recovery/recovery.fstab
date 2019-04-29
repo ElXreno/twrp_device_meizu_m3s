@@ -33,7 +33,6 @@
 /seccfg                 emmc            /dev/block/platform/mtk-msdc.0/by-name/seccfg               flags=backup=1;flashimg=1
 /oemkeystore            emmc            /dev/block/platform/mtk-msdc.0/by-name/oemkeystore          flags=backup=1;flashimg=1
 /keystore               emmc            /dev/block/platform/mtk-msdc.0/by-name/keystore             flags=backup=1;flashimg=1
-/flashinfo              emmc            /dev/block/platform/mtk-msdc.0/by-name/flashinfo            flags=backup=1;flashimg=1
 
 # Removable storage
 /external_sd            auto            /dev/block/mmcblk1p1                                        flags=display="SD-Card";backup=0;wipeingui;storage;removable;settingsstorage
