@@ -18,8 +18,8 @@
 /lk2                    emmc            /dev/block/platform/mtk-msdc.0/by-name/lk2                  flags=backup=1;flashimg=1;display="LK2"
 /logo                   emmc            /dev/block/platform/mtk-msdc.0/by-name/logo                 flags=backup=1;flashimg=1;display="Logo"
 /frp                    emmc            /dev/block/platform/mtk-msdc.0/by-name/frp                  flags=backup=1;flashimg=1;display="FRP"
-/tee1                   emmc            /dev/block/platform/mtk-msdc.0/by-name/tee1                 flags=backup=1;flashimg=1;display="Tee1"
-/tee2                   emmc            /dev/block/platform/mtk-msdc.0/by-name/tee2                 flags=backup=1;flashimg=1;display="Tee2"
+/tee1                   emmc            /dev/block/platform/mtk-msdc.0/by-name/tee1                 flags=backup=1;flashimg=1;display="Tee"
+/tee2                   emmc            /dev/block/platform/mtk-msdc.0/by-name/tee2                 flags=backup=1;flashimg=1;subpartitionof=/tee1
 /nvram                  emmc            /dev/block/platform/mtk-msdc.0/by-name/nvram                flags=backup=1;flashimg=1;display="NVRam"
 /nvdata                 ext4            /dev/block/platform/mtk-msdc.0/by-name/nvdata               flags=backup=1;flashimg=1;display="NVData"
 /metadata               emmc            /dev/block/platform/mtk-msdc.0/by-name/metadata             flags=backup=1;flashimg=1
@@ -33,6 +33,7 @@
 /seccfg                 emmc            /dev/block/platform/mtk-msdc.0/by-name/seccfg               flags=backup=1;flashimg=1
 /oemkeystore            emmc            /dev/block/platform/mtk-msdc.0/by-name/oemkeystore          flags=backup=1;flashimg=1
 /keystore               emmc            /dev/block/platform/mtk-msdc.0/by-name/keystore             flags=backup=1;flashimg=1
+/flashinfo              emmc            /dev/block/platform/mtk-msdc.0/by-name/flashinfo            flags=backup=1;flashimg=1
 
 # Removable storage
 /external_sd            auto            /dev/block/mmcblk1p1                                        flags=display="SD-Card";backup=0;wipeingui;storage;removable;settingsstorage
