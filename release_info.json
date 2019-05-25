@@ -1,8 +1,16 @@
 [
     {
-        "version": "v0.1.7-alpha",
+        "version": "v0.2.0-alpha",
         "stable": false,
         "recommended": true,
+        "release_notes": [
+            "Updated codebase"
+        ]
+    },
+    {
+        "version": "v0.1.7-alpha",
+        "stable": false,
+        "recommended": false,
         "release_notes": [
             "SDCard can be mount with another filesystem (non-vfat)",
             "Updated partitions name"
