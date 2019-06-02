@@ -42,21 +42,21 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 # Partitions types
 TARGET_USERIMAGES_USE_EXT4 := true
 
-# App
+# TWRP
+TW_THEME := portrait_hdpi
+TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_REBOOT_BOOTLOADER := true
+TW_DEVICE_VERSION := by ElXreno (v0.2.1-alpha)
+
+# TWRP excludes
 TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_SUPERSU := true
 
 # Recovery
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_NO_REBOOT_BOOTLOADER := true
-TW_THEME := portrait_hdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true
-TW_DEVICE_VERSION := by ElXreno (v0.2.0-alpha)
-TW_NO_BATT_PERCENT := true
-# TW_CUSTOM_BATTERY_PATH := /sys/devices/platform/battery/power_supply/battery/capacity # Doesn't work properly
-TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
