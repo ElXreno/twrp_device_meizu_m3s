@@ -4,9 +4,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, vendor/omni/config/common.mk)
 
+# Fuelgauge
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
+    fuelgauged \
+    libfgauge
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.secure=0 \

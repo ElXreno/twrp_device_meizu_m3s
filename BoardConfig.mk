@@ -50,9 +50,9 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_NO_HAPTICS := true
 TW_DEVICE_VERSION := by ElXreno (v0.2.1-alpha)
 
-# TWRP excludes
-TW_EXCLUDE_TWRPAPP := true
+# TWRP includes/excludes
 TW_EXCLUDE_SUPERSU := true
+TW_INCLUDE_NTFS_3G := true
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
