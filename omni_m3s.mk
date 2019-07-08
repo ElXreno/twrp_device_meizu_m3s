@@ -17,3 +17,9 @@ PRODUCT_NAME := omni_m3s
 PRODUCT_BRAND := Meizu
 PRODUCT_MODEL := M3s
 PRODUCT_BOARD := m3s
+
+PRODUCT_PACKAGES += \
+    init.recovery.mt6755.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/sbin/fuelgauged_static:recovery/root/sbin/fuelgauged_static
