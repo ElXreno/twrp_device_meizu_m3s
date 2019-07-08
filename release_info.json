@@ -1,8 +1,16 @@
 [
     {
-        "version": "v0.2.1-alpha",
+        "version": "v0.2.2-alpha",
         "stable": false,
         "recommended": true,
+        "release_notes": [
+            "Battery fix"
+        ]
+    },
+    {
+        "version": "v0.2.1-alpha",
+        "stable": false,
+        "recommended": false,
         "release_notes": [
             "Added NTFS support",
             "Disabled haptic feedback"
