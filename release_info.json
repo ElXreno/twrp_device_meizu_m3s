@@ -1,8 +1,16 @@
 [
     {
-        "version": "v0.2.2-alpha",
+        "version": "v0.2.3-alpha",
         "stable": false,
         "recommended": true,
+        "release_notes": [
+            "Added simplified Chinese support"
+        ]
+    },
+    {
+        "version": "v0.2.2-alpha",
+        "stable": false,
+        "recommended": false,
         "release_notes": [
             "Battery fix"
         ]
