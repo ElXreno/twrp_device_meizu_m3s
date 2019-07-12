@@ -49,6 +49,8 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_NO_HAPTICS := true
 TW_DEVICE_VERSION := by ElXreno (v0.2.2-alpha)
+TW_EXTRA_LANGUAGES := true
+TW_BUILD_ZH_CN_SUPPORT := true
 
 # TWRP includes/excludes
 TW_EXCLUDE_SUPERSU := true
