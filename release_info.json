@@ -1,16 +1,8 @@
 [
     {
-        "version": "v0.2.4-alpha",
-        "stable": false,
-        "recommended": true,
-        "release_notes": [
-            "Rebuild"
-        ]
-    },
-    {
         "version": "v0.2.3-alpha",
         "stable": false,
-        "recommended": false,
+        "recommended": true,
         "release_notes": [
             "Added simplified Chinese support"
         ]
