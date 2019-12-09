@@ -1,21 +1,58 @@
 language: minimal
+cache: ccache
 
-services:
-  - docker
+addons:
+  apt:
+    packages:
+    - bc
+    - bison
+    - build-essential
+    - ccache
+    - curl
+    - flex
+    - gcc-multilib
+    - git
+    - g++-multilib
+    - gnupg
+    - gperf
+    - lib32ncurses5-dev
+    - lib32z-dev
+    - libc6-dev-i386
+    - libgl1-mesa-dev
+    - libx11-dev
+    - libxml2-utils
+    - lzop
+    - maven
+    - python
+    - rsync
+    - schedtool
+    - unzip
+    - x11proto-core-dev
+    - xsltproc
+    - zip
+    - zlib1g-dev
 
 before_install:
-  - docker pull elxreno/twrp-build:latest
+  - sudo sh -c "curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo && chmod a+x /bin/repo"
 
 script:
-  - docker run -v $(pwd):/sources -w /sources elxreno/twrp-build:latest /bin/bash -c "bash build-with-travis.sh"
-
-before_deploy:
-  - export FILE_TO_UPLOAD="$(pwd)/recovery.img"
+  - echo "Preparing..."
+  - export TWRP_TREE=$(pwd) && export USE_CCACHE=true
+  - ccache -M 1G
+  - sudo sh -c "mkdir /build && chown $(whoami):$(whoami) /build" && cd /build
+  - echo "Downloading sources..."
+  - repo init -u git://github.com/ElXreno/platform_manifest_twrp_omni.git -b twrp-5.1 --depth=1
+  - repo sync --no-clone-bundle --no-tags -j$(nproc)
+  - mkdir device/meizu && cp $TWRP_TREE device/meizu/m3s
+  - echo "Building..."
+  - source build/envsetup.sh 
+  - lunch omni_m3s-eng 
+  - make -j$(nproc) recoveryimage
 
 deploy:
   provider: releases
   api_key: $OAUTH_KEY
-  file: $FILE_TO_UPLOAD
+  file: "/build/out/target/product/m3s/recovery.img"
   skip_cleanup: true
   on:
     tags: true
