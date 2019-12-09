@@ -24,6 +24,7 @@ addons:
     - libxml2-utils
     - lzop
     - maven
+    - openjdk-8-jdk
     - python
     - rsync
     - schedtool
@@ -34,26 +35,26 @@ addons:
     - zlib1g-dev
 
 before_install:
-  - sudo sh -c "curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo && chmod a+x /bin/repo"
+    - sudo sh -c "curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo && chmod a+x /bin/repo"
 
 script:
-  - echo "Preparing..."
-  - export USE_CCACHE=true
-  - ccache -M 1G
-  - sudo sh -c "mkdir /build && chown $(whoami):$(whoami) /build" && cd /build
-  - echo "Downloading sources..."
-  - repo init -u git://github.com/ElXreno/platform_manifest_twrp_omni.git -b twrp-5.1 --depth=1
-  - repo sync --no-clone-bundle --no-tags -j$(nproc)
-  - mkdir device/meizu && cp -r $TRAVIS_BUILD_DIR device/meizu/m3s
-  - echo "Building..."
-  - source build/envsetup.sh 
-  - lunch omni_m3s-eng 
-  - make -j$(nproc) recoveryimage
+    - echo "Preparing..."
+    - export USE_CCACHE=true
+    - ccache -M 1G
+    - sudo sh -c "mkdir /build && chown $(whoami):$(whoami) /build" && cd /build
+    - echo "Downloading sources..."
+    - repo init -u git://github.com/ElXreno/platform_manifest_twrp_omni.git -b twrp-5.1 --depth=1
+    - repo sync --no-clone-bundle --no-tags -j$(nproc)
+    - mkdir device/meizu && cp -r $TRAVIS_BUILD_DIR device/meizu/m3s
+    - echo "Building..."
+    - source build/envsetup.sh 
+    - lunch omni_m3s-eng 
+    - make -j$(nproc) recoveryimage
 
 deploy:
-  provider: releases
-  api_key: $OAUTH_KEY
-  file: "/build/out/target/product/m3s/recovery.img"
-  skip_cleanup: true
-  on:
-    tags: true
+    provider: releases
+    api_key: $OAUTH_KEY
+    file: "/build/out/target/product/m3s/recovery.img"
+    skip_cleanup: true
+    on:
+        tags: true
