@@ -1,5 +1,5 @@
 mkdir /build && cd /build
-repo init --depth=1 -u git://github.com/ElXreno/platform_manifest_twrp_omni.git -b twrp-5.1 && repo sync
+repo init --depth=1 -u git://github.com/ElXreno/platform_manifest_twrp_omni.git -b twrp-5.1 && repo sync --no-clone-bundle --no-tags
 rm -rf .repo && find . -type d -name ".git" -execdir rm -rf {} \;
 mkdir -p device/meizu/m3s && cp -r /sources/* device/meizu/m3s/
 source build/envsetup.sh && lunch omni_m3s-eng && make -j5 recoveryimage
