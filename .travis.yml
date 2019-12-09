@@ -37,13 +37,13 @@ before_install:
 
 script:
   - echo "Preparing..."
-  - export TWRP_TREE=$(pwd) && export USE_CCACHE=true
+  - export USE_CCACHE=true
   - ccache -M 1G
   - sudo sh -c "mkdir /build && chown $(whoami):$(whoami) /build" && cd /build
   - echo "Downloading sources..."
   - repo init -u git://github.com/ElXreno/platform_manifest_twrp_omni.git -b twrp-5.1 --depth=1
   - repo sync --no-clone-bundle --no-tags -j$(nproc)
-  - mkdir device/meizu && cp $TWRP_TREE device/meizu/m3s
+  - mkdir device/meizu && cp -r $TRAVIS_BUILD_DIR device/meizu/m3s
   - echo "Building..."
   - source build/envsetup.sh 
   - lunch omni_m3s-eng 
