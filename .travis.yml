@@ -1,6 +1,9 @@
+language: minimal
 dist: bionic
-language: cpp
-cache: ccache
+
+cache:
+  directories:
+  - .ccache
 
 addons:
   apt:
