@@ -1,8 +1,16 @@
 [
     {
-        "version": "v0.2.4-alpha",
+        "version": "v0.2.5-alpha",
         "stable": false,
         "recommended": true,
+        "release_notes": [
+            "Rebuild"
+        ]
+    },
+    {
+        "version": "v0.2.4-alpha",
+        "stable": false,
+        "recommended": false,
         "release_notes": [
             "Rebuild"
         ]
