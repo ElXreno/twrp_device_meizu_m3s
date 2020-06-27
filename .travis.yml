@@ -24,6 +24,7 @@ addons:
     - maven
     - schedtool
     - xsltproc
+    - python3
 
 before_install:
     - sudo sh -c "curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo && chmod a+x /bin/repo"
