@@ -1,0 +1,59 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    env:
+      USE_CCACHE: true
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Install build dependencies
+      run: |
+        sudo apt update 
+        sudo apt install -y gcc-multilib g++-multilib gperf lib32ncurses5-dev lib32z-dev libc6-dev-i386 libgl1-mesa-dev libxml2-utils lzop maven schedtool xsltproc
+        sudo sh -c "curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo && chmod a+x /bin/repo"
+
+    - name: Prepare & Sync
+      run: |
+        sudo sh -c "mkdir /build && chown $(whoami):$(whoami) /build" && cd /build
+        repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-5.1 --depth=1
+        repo sync --no-clone-bundle --no-tags -j$(nproc)
+        mkdir device/meizu && cp -r $GITHUB_WORKSPACE device/meizu/m3s
+    
+    - name: Cache multiple paths
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.ccache
+        key: ${{ runner.os }}-${{ hashFiles('**/BoardConfig.mk') }}-${{ hashFiles('**/omni_m3s.mk') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ hashFiles('**/BoardConfig.mk') }}-
+          ${{ runner.os }}-
+
+    - name: Build
+      run: |
+        cd /build
+        source build/envsetup.sh
+        lunch omni_m3s-eng
+        make -j$(nproc) recoveryimage
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: recovery
+        path: /build/out/target/product/m3s/recovery.img
+    
+    - name: Upload binaries to release
+      if: startsWith(github.ref, 'refs/tag/v')
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: /build/out/target/product/m3s/recovery.img
+        asset_name: recovery
+        tag: ${{ github.ref }}
